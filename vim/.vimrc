@@ -81,6 +81,7 @@ endif
 
 " Open fzf with Ctrl + p
 nnoremap <C-p> :Files<CR>
+let $FZF_DEFAULT_COMMAND = 'rg --files'
 
 " Use tab and shift-tab to navigate coc completions. Enter to use completion.
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -123,4 +124,3 @@ if executable(s:clip)
         autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
     augroup END
 endif
-

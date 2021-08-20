@@ -29,7 +29,7 @@
         {
             // Put settings here that you want to apply to all profiles.
             "fontFace": "JetBrainsMono NF",
-            "fontSize": 11,
+            "fontSize": 10,
             "colorScheme": "Gruvbox Dark",
             "tabColor": "#262626",
             "cursorShape": "vintage",
