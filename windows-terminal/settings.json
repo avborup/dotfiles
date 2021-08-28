@@ -30,8 +30,8 @@
             // Put settings here that you want to apply to all profiles.
             "fontFace": "JetBrainsMono NF",
             "fontSize": 10,
-            "colorScheme": "Gruvbox Dark",
-            "tabColor": "#262626",
+            "colorScheme": "Ayu Dark",
+            "tabColor": "#0a0e14",
             "cursorShape": "vintage",
             "cursorColor" : "#EBDBB2",
             "padding": "15, 15, 15, 15"
@@ -90,6 +90,27 @@
             "red" : "#CC241D",
             "white" : "#A89984",
             "yellow" : "#D79921"
+        },
+        {
+            "name" : "Ayu Dark",
+            "background" : "#0a0e14",
+            "black" : "#01060e",
+            "blue" : "#53bdfa",
+            "brightBlack" : "#686868",
+            "brightBlue" : "#59c2ff",
+            "brightCyan" : "#95e6cb",
+            "brightGreen" : "#c2d94c",
+            "brightPurple" : "#ffee99",
+            "brightRed" : "#f07178",
+            "brightWhite" : "#ffffff",
+            "brightYellow" : "#ffb454",
+            "cyan" : "#90e1c6",
+            "foreground" : "#b3b1ad",
+            "green" : "#91b362",
+            "purple" : "#fae994",
+            "red" : "#ea6c73",
+            "white" : "#c7c7c7",
+            "yellow" : "#f9af4f"
         }
     ],
 
