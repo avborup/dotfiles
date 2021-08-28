@@ -3,6 +3,9 @@ Set-Alias vi nvim
 $VIMDIR = "$HOME\Appdata\Local\nvim"
 $VIMFILE = "$HOME\.vimrc"
 
+# Add keyboard shortcuts for fzf file search and command history
+Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
+
 function prompt {
     # Abbreviate the path unix-style
     $path = "$(Get-Location)".replace($HOME, "~")
