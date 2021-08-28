@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'gruvbox-community/gruvbox'
+" Plug 'gruvbox-community/gruvbox' I'm sorry gruvbox! :(
+Plug 'Luxed/ayu-vim'
 Plug 'tpope/vim-surround'
 Plug 'jremmen/vim-ripgrep'
 Plug 'mbbill/undotree'
@@ -14,10 +15,12 @@ Plug 'PProvost/vim-ps1'
 Plug 'cespare/vim-toml'
 Plug 'pangloss/vim-javascript'
 Plug 'uiiaoo/java-syntax.vim'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
-colorscheme gruvbox
+set termguicolors
+colorscheme ayu
 
 set number
 set relativenumber
@@ -31,6 +34,8 @@ set smartindent
 " File type specific indentation spacings
 autocmd FileType javascript set tabstop=2 softtabstop=2
 autocmd FileType javascript set shiftwidth=2
+autocmd FileType yaml set tabstop=2 softtabstop=2
+autocmd FileType yaml set shiftwidth=2
 
 set noswapfile
 set undodir=$HOME/.nvim/undodir
@@ -53,6 +58,8 @@ let mapleader = " "
 "inoremap {;<CR> {<CR>};<ESC>O
 inoremap {<CR> {<CR>}<ESC>O
 
+nmap <leader>s ysiw
+
 " Keybinds to copy to and paste from clipboard (Windows only has one clipboard)
 vnoremap <leader>y "*y
 nnoremap <leader>p "*p
@@ -73,6 +80,9 @@ command Q :q
 
 " On Danish keyboards, Æ is where the : is on US keyboards
 nnoremap æ :
+
+" There is no dedicated backslash button on Danish keyboards.
+:tnoremap <Esc> <C-\><C-n>
 
 " Sets search for ripgrep to project root
 if executable('rg')
@@ -98,6 +108,9 @@ autocmd FileType javascript let g:NERDSpaceDelims = 1
 
 " Compile and run Rust project in vertical split (only active in Rust files)
 autocmd FileType rust nnoremap<buffer> <leader>tr :vs <bar> :wincmd l <bar> term cargo run<CR>
+
+" Autoformat rust on save
+let g:rustfmt_autosave = 1
 
 " Run python program with terminal output in vertical split. If main.py exists
 " in the current directory, run that - otherwise run the currently open file.
