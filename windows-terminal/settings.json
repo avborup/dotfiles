@@ -65,11 +65,8 @@
             "colorScheme": "Ayu Dark",
             "cursorColor": "#EBDBB2",
             "cursorShape": "vintage",
-            "font": 
-            {
-                "face": "JetBrainsMono NF",
-                "size": 10
-            },
+            "fontFace": "JetBrainsMono NF",
+            "fontSize": 11,
             "padding": "15, 15, 15, 15",
             "tabColor": "#0A0E14"
         },
