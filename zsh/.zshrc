@@ -1,4 +1,5 @@
 source ~/.profile
+source ~/.zprofile
 
 ZSH_THEME="gruvbox"
 SOLARIZED_THEME="dark"
