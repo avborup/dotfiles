@@ -55,8 +55,8 @@ local config = {
     local map = vim.keymap.set
 
     -- Keybinds to copy to and paste from clipboard
-    map("n", "<leader>y", "\"*y")
-    map("n", "<leader>p", "\"*p")
+    map("n", "<leader>y", "\"*y", { desc = "Copy to clipboard" })
+    map("n", "<leader><leader>p", "\"*p", { desc = "Paste from clipboard" })
 
     -- On Danish keyboards, Æ is where the : is on US keyboards
     map("n", "æ", ":")
@@ -66,6 +66,20 @@ local config = {
       desc = "Format code with Prettier",
       pattern = "*.js,*.jsx,*.ts,*.tsx",
       command = "Neoformat prettier",
+    })
+
+    vim.cmd([[
+      let g:neoformat_rust_rustfmt = {
+        \ 'exe': 'rustfmt',
+        \ 'args': ['--emit', 'stdout', '--edition', '2021', '--quiet'],
+        \ 'stdin': 1
+        \ }
+    ]])
+
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      desc = "Format code with rustfmt",
+      pattern = "*.rs",
+      command = "Neoformat rustfmt",
     })
   end,
 }
