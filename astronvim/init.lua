@@ -33,7 +33,8 @@ local config = {
         config = function()
             require("crates").setup()
         end,
-      }
+      },
+      "github/copilot.vim",
     },
 
     treesitter = {
@@ -53,6 +54,23 @@ local config = {
         "rust_analyzer",
       },
     },
+
+    cmp = function(opts)
+      local cmp = require "cmp"
+
+      -- Map Github copilot accept
+      opts.mapping["<C-Space>"] = function(fallback)
+        cmp.mapping.abort()
+        local copilot_keys = vim.fn["copilot#Accept"]()
+        if copilot_keys ~= "" then
+          vim.api.nvim_feedkeys(copilot_keys, "i", true)
+        else
+          fallback()
+        end
+      end
+
+      return opts
+    end,
   },
 
   lsp = {
@@ -71,6 +89,10 @@ local config = {
 
     -- Close buffer
     map("n", "<leader>q", "<cmd>Bdelete<cr>", { desc = "Close buffer" })
+
+    vim.g.copilot_no_tab_map = true
+    vim.g.copilot_assume_mapped = true
+    vim.g.copilot_tab_fallback = ""
 
     -- AstroNvim maps keys to quit to normal mode in terminal. Don't want that.
     -- It interferes when the terminal needs those keys (lazygit for example).
