@@ -69,6 +69,14 @@ local config = {
     -- On Danish keyboards, Æ is where the : is on US keyboards
     map("n", "æ", ":")
 
+    -- Close buffer
+    map("n", "<leader>q", "<cmd>Bdelete<cr>", { desc = "Close buffer" })
+
+    -- AstroNvim maps keys to quit to normal mode in terminal. Don't want that.
+    -- It interferes when the terminal needs those keys (lazygit for example).
+    vim.api.nvim_del_keymap("t", "<esc>")
+    vim.api.nvim_del_keymap("t", "jk")
+
     -- Run autoformatter on save
     vim.api.nvim_create_autocmd("BufWritePre", {
       desc = "Format code with Prettier",
