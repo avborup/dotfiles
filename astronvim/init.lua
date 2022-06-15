@@ -1,5 +1,5 @@
 local config = {
-  colorscheme = "default_theme",
+  colorscheme = "catppuccin",
 
   options = {
     g = {
@@ -35,6 +35,13 @@ local config = {
         end,
       },
       "github/copilot.vim",
+      {
+        "catppuccin/nvim",
+        as = "catppuccin",
+        config = function()
+          require("catppuccin").setup {}
+        end,
+      },
     },
 
     treesitter = {
