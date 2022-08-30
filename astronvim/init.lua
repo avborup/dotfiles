@@ -113,6 +113,9 @@ local config = {
     -- On Danish keyboards, Æ is where the : is on US keyboards
     map("n", "æ", ":")
 
+    map("t", "<C-t>", "<cmd>ToggleTerm<cr>", { desc = "Toggle terminal" })
+    map("n", "<C-t>", "<cmd>ToggleTerm<cr>", { desc = "Toggle terminal" })
+
     -- Close buffer
     map("n", "<leader>q", "<cmd>Bdelete<cr>", { desc = "Close buffer" })
 
@@ -124,6 +127,7 @@ local config = {
     -- It interferes when the terminal needs those keys (lazygit for example).
     vim.api.nvim_del_keymap("t", "<esc>")
     vim.api.nvim_del_keymap("t", "jk")
+    map("t", "<C-j>", "<C-\\><C-n>", { desc = "Terminal normal mode" })
 
     -- Run autoformatter on save
     vim.api.nvim_create_autocmd("BufWritePre", {
