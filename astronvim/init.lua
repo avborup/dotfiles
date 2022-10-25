@@ -18,6 +18,12 @@ local config = {
       { "tpope/vim-surround" },
       { "sbdchd/neoformat" },
       {
+        "ggandor/leap.nvim",
+        config = function()
+          require("leap").set_default_keymaps()
+        end,
+      },
+      {
         "simrat39/rust-tools.nvim",
         after = "nvim-lsp-installer",
         config = function()
