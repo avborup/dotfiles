@@ -99,6 +99,12 @@ local config = {
         position = "float",
       }
     },
+
+    telescope = {
+      defaults = {
+        prompt_prefix = " ",
+      }
+    },
   },
 
   lsp = {
