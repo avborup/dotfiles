@@ -95,6 +95,9 @@ local config = {
           },
         },
       },
+      window = {
+        position = "float",
+      }
     },
   },
 
