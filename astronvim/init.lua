@@ -133,6 +133,7 @@ local config = {
 
     -- Close buffer
     map("n", "<leader>q", "<cmd>Bdelete<cr>", { desc = "Close buffer" })
+    map("n", "<leader>Q", "<cmd>%bd|e#|bd#<cr>", { desc = "Close all other buffers" })
 
     vim.g.copilot_no_tab_map = true
     vim.g.copilot_assume_mapped = true
