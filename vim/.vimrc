@@ -1,7 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
 " Plug 'gruvbox-community/gruvbox' I'm sorry gruvbox! :(
-Plug 'Luxed/ayu-vim'
+" Plug 'Luxed/ayu-vim'
+Plug 'projekt0n/github-nvim-theme'
 Plug 'tpope/vim-surround'
 Plug 'jremmen/vim-ripgrep'
 Plug 'mbbill/undotree'
@@ -20,7 +21,7 @@ Plug 'rust-lang/rust.vim'
 call plug#end()
 
 set termguicolors
-colorscheme ayu
+colorscheme github_dark
 
 set number
 set relativenumber
@@ -94,9 +95,9 @@ nnoremap <C-p> :Files<CR>
 let $FZF_DEFAULT_COMMAND = 'rg --files'
 
 " Use tab and shift-tab to navigate coc completions. Enter to use completion.
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Show docs
 nnoremap <leader>d :call CocAction('doHover')<CR>
@@ -153,14 +154,3 @@ endfunction
 
 " Keybind for running python program (only active in python files)
 autocmd FileType python nnoremap<buffer> <leader>tr :call RunPythonProgram()<CR>
-
-" WSL yank support
-let s:clip = '/mnt/c/Windows/System32/clip.exe'
-if executable(s:clip)
-    augroup WSLYank
-        autocmd!
-        autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
-    augroup END
-endif
-
-language en
