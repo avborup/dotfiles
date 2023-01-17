@@ -8,9 +8,13 @@ local config = {
   },
 
   default_theme = {
-    diagnostics_style = {
-      italic = true
-    },
+    highlights = function(hl)
+      hl.DiagnosticError.italic = true
+      hl.DiagnosticHint.italic = true
+      hl.DiagnosticInfo.italic = true
+      hl.DiagnosticWarn.italic = true
+      return hl
+    end,
   },
 
   plugins = require("user.plugins"),
