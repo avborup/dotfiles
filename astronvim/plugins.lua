@@ -8,15 +8,15 @@ return {
         require("leap").set_default_keymaps()
       end,
     },
-    -- {
-    --   "simrat39/rust-tools.nvim",
-    --   after = "nvim-lsp-installer",
-    --   config = function()
-    --     require("rust-tools").setup {
-    --       server = astronvim.lsp.server_settings "rust_analyzer",
-    --     }
-    --   end,
-    -- },
+    {
+      "simrat39/rust-tools.nvim",
+      after = "mason-lspconfig.nvim",
+      config = function()
+        require("rust-tools").setup {
+          server = astronvim.lsp.server_settings "rust_analyzer",
+        }
+      end,
+    },
     {
       "saecki/crates.nvim",
       event = { "BufRead Cargo.toml" },
