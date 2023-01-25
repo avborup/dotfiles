@@ -6,6 +6,10 @@ return function()
   vim.g.copilot_assume_mapped = true
   vim.g.copilot_tab_fallback = ""
 
+  -- Make trailing spaces visible
+  vim.opt.list = true
+  vim.opt.listchars:append({ trail = "·" })
+
   -- Remove background color
   vim.cmd([[
     hi Normal guibg=none ctermbg=none
