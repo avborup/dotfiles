@@ -2,12 +2,12 @@ return {
   init = {
     { "tpope/vim-surround" },
     { "sbdchd/neoformat" },
-    {
-      "ggandor/leap.nvim",
-      config = function()
-        require("leap").set_default_keymaps()
-      end,
-    },
+    -- {
+    --   "ggandor/leap.nvim",
+    --   config = function()
+    --     require("leap").set_default_keymaps()
+    --   end,
+    -- },
     {
       "simrat39/rust-tools.nvim",
       after = "mason-lspconfig.nvim",
@@ -34,6 +34,14 @@ return {
       end,
     },
     "adelarsq/neofsharp.vim",
+    {
+      "ThePrimeagen/harpoon",
+      after = "telescope.nvim",
+      config = function()
+        require("harpoon").setup()
+        require("telescope").load_extension("harpoon")
+      end,
+    }
   },
 
   treesitter = {
