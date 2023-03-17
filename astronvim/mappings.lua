@@ -11,6 +11,13 @@ return {
       function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
       desc = "Previous buffer"
     },
+    --------------------------
+    -- In-buffer navigation --
+    --------------------------
+    ["]g"] = false, -- disable astronvim default next git hunk mapping
+    ["[g"] = false, -- disable astronvim default previous git hunk mapping
+    ["<leader>gj"] = { function() require("gitsigns").next_hunk() end, desc = "Next Git hunk" },
+    ["<leader>gk"] = { function() require("gitsigns").prev_hunk() end, desc = "Previous Git hunk" },
     -------------
     -- Harpoon --
     -------------
@@ -37,7 +44,7 @@ return {
     -----------
     -- Alias --
     -----------
-    ["æ"] = ":"
+    ["æ"] = ":",
   },
   t = {
     ["<C-j>"] = { "<C-\\><C-n>", desc = "Terminal normal mode" },
