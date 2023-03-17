@@ -1,14 +1,10 @@
 return function()
-  require("user.polish.mappings")()
-  require("user.polish.autoformat")()
-
-  vim.g.copilot_no_tab_map = true
-  vim.g.copilot_assume_mapped = true
-  vim.g.copilot_tab_fallback = ""
-
-  -- Make trailing spaces visible
-  vim.opt.list = true
-  vim.opt.listchars:append({ trail = "·" })
+  -- Run autoformatter on save for JS
+  vim.api.nvim_create_autocmd("BufWritePre", {
+    desc = "Format code with Prettier",
+    pattern = "*.js,*.jsx,*.ts,*.tsx",
+    command = "silent Neoformat prettier",
+  })
 
   -- Remove background color
   vim.cmd([[
