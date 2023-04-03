@@ -2,6 +2,14 @@ return {
   -- Editing
   { "tpope/vim-surround", event = "User AstroFile" },
   { "tpope/vim-repeat",   event = "User AstroFile" },
+  -- Within-buffer navigation
+  {
+    "ggandor/leap.nvim",
+    event = "User AstroFile",
+    -- config = function()
+    --   require("leap").add_default_mappings()
+    -- end
+  },
   -- Theme
   {
     "catppuccin/nvim",
@@ -21,7 +29,7 @@ return {
   },
   -- Autoformatting
   { "sbdchd/neoformat",   event = "User AstroFile" },
-  --
+  -- Copilot
   { "github/copilot.vim", event = "User AstroFile" },
   -- Language tools
   "simrat39/rust-tools.nvim",

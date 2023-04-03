@@ -18,6 +18,8 @@ return {
     ["[g"] = false, -- disable astronvim default previous git hunk mapping
     ["<leader>gj"] = { function() require("gitsigns").next_hunk() end, desc = "Next Git hunk" },
     ["<leader>gk"] = { function() require("gitsigns").prev_hunk() end, desc = "Previous Git hunk" },
+    ["<leader>s"] = { "<Plug>(leap-forward-to)", desc = "Leap search forward" },
+    ["<leader><leader>s"] = { "<Plug>(leap-backward-to)", desc = "Leap search backward" },
     -------------
     -- Harpoon --
     -------------
