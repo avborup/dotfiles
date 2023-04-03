@@ -1,6 +1,7 @@
 return {
   -- Editing
   { "tpope/vim-surround", event = "User AstroFile" },
+  { "tpope/vim-repeat",   event = "User AstroFile" },
   -- Theme
   {
     "catppuccin/nvim",
