@@ -43,4 +43,12 @@ return {
   },
   "adelarsq/neofsharp.vim",
   "delphinus/vim-firestore",
+  -- Memes and fun
+  {
+    "eandrju/cellular-automaton.nvim",
+    keys = {
+      -- lazily load on keybind
+      { "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>", desc = "Cellular automaton" },
+    },
+  },
 }
