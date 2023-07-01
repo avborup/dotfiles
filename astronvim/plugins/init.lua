@@ -43,6 +43,20 @@ return {
   },
   "adelarsq/neofsharp.vim",
   "delphinus/vim-firestore",
+  -- Send HTTP requests and view responses
+  {
+    "rest-nvim/rest.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    ft = { "http" },
+    config = function()
+      require("rest-nvim").setup({
+        result_split_horizontal = true,
+      })
+    end,
+    keys = {
+      { "<leader>rs", "<Plug>RestNvim", desc = "Send HTTP request under cursor" },
+    }
+  },
   -- Memes and fun
   {
     "eandrju/cellular-automaton.nvim",
