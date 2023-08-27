@@ -41,6 +41,10 @@ return {
       require("crates").setup()
     end,
   },
+  {
+    "AstroNvim/astrocommunity",
+    { import = "astrocommunity.pack.scala" },
+  },
   "adelarsq/neofsharp.vim",
   "delphinus/vim-firestore",
   -- Send HTTP requests and view responses
