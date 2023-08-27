@@ -11,6 +11,7 @@ return {
       function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
       desc = "Previous buffer"
     },
+    ["<leader>q"] = { function() require("astronvim.utils.buffer").close() end, desc = "Close buffer" },
     --------------------------
     -- In-buffer navigation --
     --------------------------
@@ -34,11 +35,6 @@ return {
       desc = "Harpoon add file"
     },
     ["<leader>hs"] = { "<cmd>Telescope harpoon marks<cr>", desc = "Harpoon marks in telescope" },
-    ---------------------
-    -- Closing buffers --
-    ---------------------
-    ["<leader>q"] = { "<cmd>Bdelete<cr>", desc = "Close buffer" },
-    ["<leader>Q"] = { "<cmd>%bd|e#|bd#<cr>", desc = "Close all other buffers" },
     --------------
     -- Terminal --
     --------------
