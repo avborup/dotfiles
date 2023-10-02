@@ -2,6 +2,10 @@ return {
   -- Editing
   { "tpope/vim-surround", event = "User AstroFile" },
   { "tpope/vim-repeat",   event = "User AstroFile" },
+  {
+    "fedepujol/move.nvim",
+    cmd = { "MoveLine", "MoveHChar", "MoveWord", "MoveBlock", "MoveHBlock" },
+  },
   -- Within-buffer navigation
   {
     "ggandor/leap.nvim",

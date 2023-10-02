@@ -43,6 +43,17 @@ return {
     -- Alias --
     -----------
     ["æ"] = ":",
+    -------------
+    -- Editing --
+    -------------
+    ["<S-down>"] = { "<cmd>MoveLine(1)<CR>", desc = "Move line down" },
+    ["<S-up>"] = { "<cmd>MoveLine(-1)<CR>", desc = "Move line up" },
+    ["<S-left>"] = { "<cmd>MoveHChar(-1)<CR>", desc = "Move character left" },
+    ["<S-right>"] = { "<cmd>MoveHChar(1)<CR>", desc = "Move character right" },
+  },
+  v = {
+    ["<S-down>"] = { ":MoveBlock(1)<CR>", desc = "Move block down" },
+    ["<S-up>"] = { ":MoveBlock(-1)<CR>", desc = "Move block up" },
   },
   t = {
     ["<C-j>"] = { "<C-\\><C-n>", desc = "Terminal normal mode" },
