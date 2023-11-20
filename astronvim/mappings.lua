@@ -50,10 +50,22 @@ return {
     ["<S-up>"] = { "<cmd>MoveLine(-1)<CR>", desc = "Move line up" },
     ["<S-left>"] = { "<cmd>MoveHChar(-1)<CR>", desc = "Move character left" },
     ["<S-right>"] = { "<cmd>MoveHChar(1)<CR>", desc = "Move character right" },
+    ["<leader>rc"] = {
+      function() require("textcase").open_telescope('quick_change') end,
+      desc = "Convert case of current word"
+    },
+    ["<leader>rC"] = {
+      function() require("textcase").open_telescope('lsp_change') end,
+      desc = "Convert case via LSP rename",
+    },
   },
   v = {
     ["<S-down>"] = { ":MoveBlock(1)<CR>", desc = "Move block down" },
     ["<S-up>"] = { ":MoveBlock(-1)<CR>", desc = "Move block up" },
+    ["<leader>rc"] = {
+      function() require("textcase").open_telescope() end,
+      desc = "Convert case of selection",
+    },
   },
   t = {
     ["<C-j>"] = { "<C-\\><C-n>", desc = "Terminal normal mode" },

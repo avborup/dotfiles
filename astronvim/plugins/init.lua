@@ -6,6 +6,13 @@ return {
     "fedepujol/move.nvim",
     cmd = { "MoveLine", "MoveHChar", "MoveWord", "MoveBlock", "MoveHBlock" },
   },
+  {
+    "johmsalas/text-case.nvim",
+    config = function()
+      require('textcase').setup {}
+      require('telescope').load_extension('textcase')
+    end
+  },
   -- Within-buffer navigation
   {
     "ggandor/leap.nvim",
