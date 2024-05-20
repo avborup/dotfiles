@@ -14,5 +14,8 @@ return {
     config = {
       clangd = { capabilities = { offsetEncoding = "utf-8" } },
     },
+    features = {
+      inlay_hints = true,
+    },
   },
 }
