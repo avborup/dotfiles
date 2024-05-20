@@ -1,2 +1,7 @@
 git:
   overrideGpg: true
+
+gui:
+  theme:
+    selectedLineBgColor:
+      - reverse
