@@ -3,7 +3,6 @@ return {
   opts = {
     defaults = {
       prompt_prefix = "  ",
-      selection_caret = " ",
     },
   },
 }

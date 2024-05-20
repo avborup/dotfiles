@@ -3,7 +3,7 @@ return {
   opts = function(_, opts)
     local cmp = require "cmp"
 
-    return require("astronvim.utils").extend_tbl(opts, {
+    return require("astrocore").extend_tbl(opts, {
       -- Map Github copilot accept
       mapping = {
         ["<C-Space>"] = function(fallback)
@@ -14,7 +14,7 @@ return {
           else
             fallback()
           end
-        end
+        end,
       },
     })
   end,

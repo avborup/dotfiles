@@ -6,12 +6,12 @@ return {
         hide_dotfiles = false,
         hide_gitignored = false,
         hide_by_name = {
-          ".git"
+          ".git",
         },
       },
     },
     window = {
       position = "float",
-    }
-  }
+    },
+  },
 }
