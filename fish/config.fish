@@ -8,6 +8,10 @@ abbr --add vi nvim
 abbr --add gg lazygit
 
 abbr --add ta tmux attach
+abbr --add tml tmux ls
+abbr --add tmn --set-cursor -- tmux new -s '"%"'
+abbr --add tmlo tmuxifier load-session
+
 abbr --add gs git switch
 abbr --add gp git pull
 
