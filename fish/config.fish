@@ -22,5 +22,6 @@ set fish_greeting
 export EDITOR=nvim
 export GIT_EDITOR=nvim
 
-fish_add_path $HOME/bin \
-  $HOME/.tmuxifier/bin
+fish_add_path $HOME/bin
+
+fzf_configure_bindings --directory=\cf
