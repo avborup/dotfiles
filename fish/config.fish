@@ -17,6 +17,11 @@ abbr --add gp git pull
 
 alias l="lsd -A -l --blocks size,date,name --group-directories-first"
 
+set -l os (uname)
+if test "$os" = "Darwin"
+  alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+end
+
 set fish_greeting
 
 export EDITOR=nvim
