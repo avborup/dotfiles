@@ -4,10 +4,12 @@ return {
   ---@type AstroLSPOpts
   opts = {
     formatting = {
-      enabled = true,
-      allow_filetypes = {
-        "rust",
-        "lua",
+      format_on_save = {
+        enabled = true,
+        allow_filetypes = {
+          "rust",
+          "lua",
+        },
       },
     },
     ---@diagnostic disable: missing-fields
