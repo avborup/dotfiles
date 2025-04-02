@@ -1,8 +1,9 @@
 ---@type LazySpec
 return {
   "sainnhe/everforest",
-  enabled = false,
   config = function()
+    -- vim.g.background = "light"
+
     -- vim.g.everforest_better_performance = 1,
     vim.g.everforest_background = "hard"
     vim.g.everforest_transparent_background = 1
